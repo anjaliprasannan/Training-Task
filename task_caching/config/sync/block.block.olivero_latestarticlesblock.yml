@@ -1,0 +1,20 @@
+uuid: 9d68a25d-ffca-4680-993a-94aac4103abb
+langcode: en
+status: true
+dependencies:
+  module:
+    - task_caching
+  theme:
+    - olivero
+id: olivero_latestarticlesblock
+theme: olivero
+region: content
+weight: -6
+provider: null
+plugin: latest_articles_block
+settings:
+  id: latest_articles_block
+  label: 'Latest Articles Block'
+  label_display: visible
+  provider: task_caching
+visibility: {  }
