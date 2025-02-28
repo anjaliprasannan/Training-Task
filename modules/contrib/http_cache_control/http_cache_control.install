@@ -1,0 +1,43 @@
+<?php
+
+/**
+ * @file
+ * Install/update/uninstall hooks.
+ */
+
+/**
+ * Increase module weight.
+ */
+function http_cache_control_install() {
+  module_set_weight('http_cache_control', 1);
+}
+
+/**
+ * Increase module weight.
+ */
+function http_cache_control_update_8101() {
+  module_set_weight('http_cache_control', 1);
+}
+
+/**
+ * Convert existing config to use new schema.
+ */
+function http_cache_control_update_8102(): void {
+  $config = \Drupal::configFactory()->getEditable('http_cache_control.settings');
+  $data = $config->getRawData();
+
+  if (isset($data['cache']['http']['mustrevalidate'])) {
+    $data['cache']['http']['mustrevalidate'] = (bool) $data['cache']['http']['mustrevalidate'];
+  }
+
+  if (isset($data['cache']['http']['nocache'])) {
+    $data['cache']['http']['nocache'] = (bool) $data['cache']['http']['nocache'];
+  }
+
+  if (isset($data['cache']['http']['nostore'])) {
+    $data['cache']['http']['nostore'] = (bool) $data['cache']['http']['nostore'];
+  }
+
+  $config->setData($data);
+  $config->save();
+}

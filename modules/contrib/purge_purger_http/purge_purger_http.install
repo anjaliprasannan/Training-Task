@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the purge_purger_http module.
+ */
+
+/**
+ * Change the 'verify' config option to a boolean.
+ */
+function purge_purger_http_update_8003(): void {
+  $configNames = \Drupal::configFactory()
+    ->listAll('purge_purger_http.settings');
+
+  foreach ($configNames as $configName) {
+    $config = \Drupal::configFactory()->getEditable($configName);
+    $verify = $config->getOriginal('verify', FALSE);
+
+    if ($verify === NULL) {
+      continue;
+    }
+
+    $config->set('verify', (bool) $verify);
+    $config->save();
+  }
+}

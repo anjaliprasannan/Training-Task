@@ -1,0 +1,5 @@
+name: 'Task caching'
+type: module
+description: 'Provides a block displaying the latest 3 articles'
+core_version_requirement: ^11
+package: Custom

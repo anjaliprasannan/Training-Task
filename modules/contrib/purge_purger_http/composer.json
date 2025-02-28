@@ -1,0 +1,11 @@
+{
+    "name": "drupal/purge_purger_http",
+    "type": "drupal-module",
+    "description": "Generic and highly configurable purger that makes HTTP requests, best suits custom configurations.",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "php": ">=7.3",
+        "drupal/purge": "^3.3",
+        "drupal/core": "^9.2 || ^10 || ^11"
+    }
+}

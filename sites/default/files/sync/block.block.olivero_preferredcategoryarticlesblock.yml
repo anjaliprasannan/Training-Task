@@ -1,0 +1,20 @@
+uuid: 681e5bfd-7d16-4e78-995c-07c1eb506f69
+langcode: en
+status: true
+dependencies:
+  module:
+    - task_caching
+  theme:
+    - olivero
+id: olivero_preferredcategoryarticlesblock
+theme: olivero
+region: sidebar
+weight: 0
+provider: null
+plugin: preferred_category_articles_block
+settings:
+  id: preferred_category_articles_block
+  label: 'Preferred Category Articles Block'
+  label_display: visible
+  provider: task_caching
+visibility: {  }
